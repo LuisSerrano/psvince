@@ -1,6 +1,6 @@
 PSVince is based on this MSKB article:
 
-http://support.microsoft.com/default.aspx?scid=kb;en-us;Q175030 
+http://support.microsoft.com/default.aspx?scid=kb;en-us;Q175030
 
 # Notes
 * See psvince.iss for usage.
