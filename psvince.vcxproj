@@ -57,7 +57,6 @@
     </ResourceCompile>
     <Link>
       <LinkDLL>true</LinkDLL>
-      <ModuleDefinitionFile>psvince.def</ModuleDefinitionFile>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <SetChecksum>true</SetChecksum>
@@ -80,15 +79,11 @@
     <Link>
       <LinkDLL>true</LinkDLL>
       <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>psvince.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="psvince.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="psvince.def" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="verinfo.rc" />

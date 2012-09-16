@@ -19,10 +19,10 @@ DefaultDirName={pf}\PSVince
 Source: Release\psvince.dll; Flags: dontcopy
 
 [Code]
-function IsModuleLoaded(modulename: AnsiString): Boolean;
-external 'IsModuleLoaded@files:psvince.dll stdcall';
+function IsModuleLoaded2(modulename: AnsiString): Boolean;
+external 'IsModuleLoaded2@files:psvince.dll stdcall';
 
 function InitializeSetup(): Boolean;
 begin
-  Result := Not IsModuleLoaded('notepad.exe');
+  Result := Not IsModuleLoaded2('screamer.exe');
 end;

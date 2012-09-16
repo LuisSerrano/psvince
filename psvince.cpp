@@ -1,6 +1,3 @@
-// psvince.cpp : Defines the entry point for the DLL application.
-//
-
 #ifndef WIN32_LEAN_AND_MEAN
 #define WIN32_LEAN_AND_MEAN
 #endif
@@ -16,28 +13,22 @@ typedef struct {
     BOOL  bEnd;
 } EnumInfoStruct;
 
-BOOL WINAPI EnumProcs(char* procname);
-BOOL WINAPI EnumProcs2(char* procname);
+BOOL EnumProcs(char* procname);
+BOOL EnumProcs2(char* procname);
 
 
-BOOL APIENTRY DllMain(HANDLE hModule,
-                      DWORD  ul_reason_for_call,
-                      LPVOID lpReserved
-                     )
+int main()
 {
-    UNREFERENCED_PARAMETER(hModule);
-    UNREFERENCED_PARAMETER(ul_reason_for_call);
-    UNREFERENCED_PARAMETER(lpReserved);
-    return TRUE;
+    return 0;
 }
 
-int APIENTRY IsModuleLoaded(char *lpModule)
+extern "C" __declspec(dllexport) int IsModuleLoaded(char *lpModule)
 {
     return EnumProcs(lpModule);
 }
 
 
-BOOL WINAPI EnumProcs(char* procname)
+BOOL EnumProcs(char* procname)
 {
 
     OSVERSIONINFO  osver;
@@ -229,13 +220,13 @@ BOOL WINAPI EnumProcs(char* procname)
 }
 
 
-int APIENTRY IsModuleLoaded2(char *lpModule)
+extern "C" __declspec(dllexport) int IsModuleLoaded2(char *lpModule)
 {
     return EnumProcs2(lpModule);
 }
 
 
-BOOL WINAPI EnumProcs2(char* procname)
+BOOL EnumProcs2(char* procname)
 {
     //MessageBox(NULL, procname, "msg", MB_OK);
     HANDLE handleToSnapshot;
